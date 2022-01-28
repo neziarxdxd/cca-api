@@ -1,16 +1,19 @@
 const mongoose = require('mongoose');
 
-const Post= new mongoose.Schema({
-    test:{
+const StudentGrade= new mongoose.Schema({
+    studentName:{
         type:String,
         required: true,
     },
-    content:{
+    
+    studentID:{
         type:String,
-        required: true
+        required: true,
     },
-    author:{
-        type:String,
+    
+
+    gradeList:{
+        type:Array,
         required: true,
     },
     datestamp:{
@@ -20,4 +23,4 @@ const Post= new mongoose.Schema({
     },
 })
 
-module.exports = mongoose.model('Post', Post)
+module.exports = mongoose.model('StudentGrade', StudentGrade)

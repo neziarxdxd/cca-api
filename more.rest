@@ -2,9 +2,14 @@ POST http://localhost:3000/post HTTP/1.1
 content-type: application/json	
 
 {	
-    "title": "nnnnn",	
-    "content":"kdkdkskdskdks",	
-    "author":"Sangalang"	
+    "studentID":"18-19983",
+    "studentName":"Joshua",
+    "gradeList":[
+        {"name":"KAPCUL", "grade":1},
+         {"name":"MATH", "grade":1},
+         {"name":"PHY", "grade":3}
+        
+    ]	
 }
 ###
 PATCH http://localhost:3000/update/601558be348ea827c4381496 HTTP/1.1	
