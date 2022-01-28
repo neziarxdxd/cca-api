@@ -1,0 +1,25 @@
+POST http://localhost:3000/post HTTP/1.1	
+content-type: application/json	
+
+{	
+    "title": "nnnnn",	
+    "content":"kdkdkskdskdks",	
+    "author":"Sangalang"	
+}
+###
+PATCH http://localhost:3000/update/601558be348ea827c4381496 HTTP/1.1	
+content-type: application/json	
+
+{	
+    "title": "LOdsdsdsRDDDDDDDDDDDD",	
+    "content":"fdfdkf",	
+    "author":"Sangalang-2-2"	
+}
+###
+GET http://localhost:3000/ HTTP/1.1
+###
+
+GET http://localhost:3000/601558be348ea827c4381496 HTTP/1.1
+###
+
+DELETE http://localhost:3000/remove/601558be348ea827c4381496 HTTP/1.1
