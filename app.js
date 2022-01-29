@@ -50,6 +50,12 @@ app.get('/', async (req, res) => {
 app.get('/:id', getPost, (req, res) => {
   res.json(res.post)
 })
+
+app.get('/letde', getPost, (req, res) => {
+  res.json({"dfd":"dfdfd"})
+})
+
+
 //  update data
 app.patch('/update/:id', getPost, async (req, res) => {
   res.body.studentID = req.body.studentID
@@ -66,7 +72,9 @@ app.patch('/update/:id', getPost, async (req, res) => {
   }
 })
 
-
+app.get('/about', function (req, res) {
+  res.send('about')
+})
 app.delete('/remove/:id', getPost, async (req, res) => {
   // trying to delete
   try {
@@ -86,6 +94,9 @@ app.get('/user', (req, res) => {
   res.send("WE ARE ON USER");
 });
 
+app.get('/testo', (req, res) => {
+  res.json("WE ARE ON USER");
+});
 
 async function getPost(req, res, next) {
   let post

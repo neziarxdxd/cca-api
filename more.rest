@@ -2,12 +2,12 @@ POST http://localhost:3000/post HTTP/1.1
 content-type: application/json	
 
 {	
-    "studentID":"18-19983",
-    "studentName":"Joshua",
+    "studentID":"18-19200",
+    "studentName":"Job",
     "gradeList":[
-        {"name":"KAPCUL", "grade":1},
-         {"name":"MATH", "grade":1},
-         {"name":"PHY", "grade":3}
+        {"name":"KAPCUL2", "grade":1},
+         {"name":"MATH3", "grade":2},
+         {"name":"COMSCi", "grade":1}
         
     ]	
 }
