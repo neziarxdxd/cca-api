@@ -77,9 +77,9 @@ app.get('/:id', getPost, (req, res) => {
 
 //  update data
 app.patch('/update/:id', getPost, async (req, res) => {
-  res.body.studentID = req.body.studentID
-  res.body.studentName = req.body.studentName
-  res.body.gradeList = req.body.gradeList
+  res.post.studentID = req.body.studentID
+  res.post.studentName = req.body.studentName
+  res.post.gradeList = req.body.gradeList
   try {
     const updatePost = await res.post.save()
     res.json(updatePost)

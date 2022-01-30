@@ -12,13 +12,18 @@ content-type: application/json
     ]	
 }
 ###
-PATCH http://localhost:3000/update/601558be348ea827c4381496 HTTP/1.1	
-content-type: application/json	
+PATCH http://localhost:3000/update/61f3cde8a35d092418bdc743 HTTP/1.1	
+content-type: application/json
 
 {	
-    "title": "LOdsdsdsRDDDDDDDDDDDD",	
-    "content":"fdfdkf",	
-    "author":"Sangalang-2-2"	
+    "studentID":"18-19200",
+    "studentName":"Joboooooooo",
+    "gradeList":[
+        {"name":"KAPCUL2", "grade":1000},
+         {"name":"MATH3", "grade":200},
+         {"name":"COMSCi", "grade":100}
+        
+    ]	
 }
 ###
 GET http://localhost:3000/ HTTP/1.1
