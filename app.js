@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
+var cors = require('cors')
 const app = express();
 const StudentGrade = require('./models/StudentGrade')
 // ROUTES 
@@ -16,7 +17,7 @@ const db = mongoose.connection
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Connected to Database'))
 app.use(express.json())
-
+app.use(cors())
 app.post('/post', async (req, res) => {
 
   const post = new StudentGrade({
@@ -35,6 +36,25 @@ app.post('/post', async (req, res) => {
 });
 
 
+app.get('/meet/:id', async (req, res) => {
+  try {
+    const getPost = await StudentGrade.find({"studentID": req.params.id})
+    console.log()
+    res.json({"name":getPost[0]["studentName"]})
+  } catch (err) {
+    res.status(500).json({
+      message: err.message
+    })
+  }
+ 
+})
+
+app.get('/about', function (req, res) {
+  res.send('about')
+})
+app.get('/letde', (req, res) => {
+  res.send("sds")
+})
 //route
 app.get('/', async (req, res) => {
   try {
@@ -47,13 +67,12 @@ app.get('/', async (req, res) => {
   }
 })
 
+
 app.get('/:id', getPost, (req, res) => {
   res.json(res.post)
 })
 
-app.get('/letde', getPost, (req, res) => {
-  res.json({"dfd":"dfdfd"})
-})
+
 
 
 //  update data
@@ -72,9 +91,7 @@ app.patch('/update/:id', getPost, async (req, res) => {
   }
 })
 
-app.get('/about', function (req, res) {
-  res.send('about')
-})
+
 app.delete('/remove/:id', getPost, async (req, res) => {
   // trying to delete
   try {
