@@ -40,7 +40,7 @@ app.get('/meet/:id', async (req, res) => {
   try {
     const getPost = await StudentGrade.find({"studentID": req.params.id})
     console.log()
-    res.json({"name":getPost[0]["studentName"]})
+    res.json(getPost)
   } catch (err) {
     res.status(500).json({
       message: err.message
@@ -72,7 +72,7 @@ app.get('/:id', getPost, (req, res) => {
   res.json(res.post)
 })
 
-
+// todo: update studentID
 
 
 //  update data
